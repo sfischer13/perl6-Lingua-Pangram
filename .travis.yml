@@ -1,0 +1,24 @@
+sudo: false
+
+language: perl6
+
+perl6:
+  - latest
+  - '2018.01'
+  - '2017.01'
+  - '2016.01'
+  - 'v6.c'
+  - 'v6.b'
+
+os:
+  - linux
+  - osx
+
+install:
+    - rakudobrew build-zef
+    - zef --debug --depsonly install .
+
+script:
+    - echo $TRAVIS_PERL6_VERSION
+    - perl6 -v
+    - PERL6LIB=lib TEST_META=1 prove -v -r --exec=perl6 t/
