@@ -8,19 +8,18 @@ use Lingua::Pangram;
 
 multi MAIN(*@word, Str :l(:$language)) {
     my $string = @word.join(' ');
+    without $language { exit +!pangram-en($string) }
     given $language {
         when 'de' { exit +!pangram-de($string) }
         when 'en' { exit +!pangram-en($string) }
         when 'es' { exit +!pangram-es($string) }
         when 'fr' { exit +!pangram-fr($string) }
         when 'ru' { exit +!pangram-ru($string) }
-        when Str  { exit +!pangram-en($string) }
         default   {
             say 'Unknown language code!';
             exit 1;
         }
     }
-    exit;
 }
 
 multi MAIN(Bool :h(:$help)) {
