@@ -1,8 +1,8 @@
 use v6.c;
 
-unit module Lingua::Pangram:ver<0.1.0>:auth<github:sfischer13>;
+unit module Lingua::Pangram:auth<github:sfischer13>:ver<0.1.1>;
 
-our $VERSION = '0.1.0';
+our $VERSION = '0.1.1';
 
 =begin pod
 
