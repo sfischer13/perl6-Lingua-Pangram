@@ -5,10 +5,6 @@ language: perl6
 perl6:
   - latest
   - '2018.01'
-  - '2017.01'
-  - '2016.01'
-  - 'v6.c'
-  - 'v6.b'
 
 os:
   - linux
